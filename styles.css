@@ -16,13 +16,17 @@ body {
 
 #display {
   width: 100%;
-  padding: 20px;
+  /*padding: 20px 0px;*/
+  padding: 20px 135px 20px 0px;
   font-size: 5rem;
+  
   text-align: right;
-  justify-content: right;
   border: none;
   background-color: hsl(0, 0%, 20%);
   color: white;
+}
+#display:focus{
+  outline: none;
 }
 #keys {
   display: grid;
