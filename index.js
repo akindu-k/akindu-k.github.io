@@ -91,4 +91,7 @@ window.addEventListener('keydown', function(e) {
   else if (key === 'Delete'){
     deleteCharacter();
   }
+  else if (key==='='){
+    calculate();
+  }
 });
