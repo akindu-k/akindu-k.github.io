@@ -48,3 +48,24 @@ function calculate(){
 function percentage(){
     display.value = (display.value)/100;
 }
+
+
+window.addEventListener('keydown', function(e) {
+  // Get the key that was pressed
+  const key = e.key;
+
+  // Check if the key is a number or an operator
+  if ((key >= '0' && key <= '9') || key === '+' || key === '-' || key === '*' || key === '/' || key === '.') {
+    // If it's a number or an operator, append it to the display
+    appendToDisplay(key);
+  } else if (key === 'Enter') {
+    // If it's the Enter key, calculate the result
+    calculate();
+  } else if (key === 'Backspace' || key === 'Escape') {
+    // If it's the Backspace key, clear the display
+    clearDisplay();
+  }
+  else if (key === '%'){
+    percentage();
+  }
+});
