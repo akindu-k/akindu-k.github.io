@@ -49,6 +49,26 @@ function percentage(){
     display.value = (display.value)/100;
 }
 
+function deleteCharacter() {
+  // Get the current display value
+  var displayValue = document.getElementById('display').value;
+
+  // If the display value is not '0', delete the last character
+  if (displayValue !== '0') {
+    document.getElementById('display').value = displayValue.slice(0, -1);
+  }
+
+  // If the display value is now empty, change it back to '0'
+  if (document.getElementById('display').value === '') {
+    document.getElementById('display').value = '0';
+    // Also change the clear button text back to 'AC'
+    document.getElementById('clear-btn').textContent = 'AC';
+  } else {
+    // If the display value is not '0', change the clear button text to 'C'
+    document.getElementById('clear-btn').textContent = 'C';
+  }
+}
+
 
 window.addEventListener('keydown', function(e) {
   // Get the key that was pressed
@@ -67,5 +87,8 @@ window.addEventListener('keydown', function(e) {
   }
   else if (key === '%'){
     percentage();
+  }
+  else if (key === 'Delete'){
+    deleteCharacter();
   }
 });
