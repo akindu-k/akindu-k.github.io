@@ -14,20 +14,26 @@ display.addEventListener('input', () => {
     function appendToDisplay(value) {
       if (display.value === '0' && value === '0') {
         // Do nothing if display is 0 and the value is 0
+        
+
         return;
       }
   
       if (display.value === '0' && value !== '.') {
         // If display is 0 and the value is not a decimal point, replace the display value
         display.value = value;
+        document.getElementById('clear-btn').textContent = 'AC';
       } else {
         // Otherwise, append the value
+        document.getElementById('clear-btn').textContent = 'C';
         display.value += value;
+        //document.getElementById('clear-btn').textContent = 'C';
       }
     }
 
 function clearDisplay(){
     display.value = "0";
+    document.getElementById('clear-btn').textContent = 'AC';
 }
 
 function calculate(){
